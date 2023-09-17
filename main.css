@@ -1,0 +1,306 @@
+* {
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    border: none;
+    outline: none;
+}
+
+:root {
+    --pink: #f66cc2;
+    --darkpink: #b55c7d;
+    --lightpink: #fbc6f1;
+    --red: #d3383e;
+    --brown: #7b333e;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--lightpink);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(transparent, var(--pink), var(--darkpink));
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(transparent, var(--darkpink), var(--red));
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    color: white;
+    cursor: url(res/cursor.png), auto;
+    min-width: 320px;
+    background-color: var(--pink);
+    text-shadow: -0.05rem 0 var(--brown), 0 0.05rem var(--brown), 0.05rem 0 var(--brown), 0 -0.05rem var(--brown);
+}
+
+nav {
+    display: flex;
+    background-color: var(--lightpink);
+    flex-direction: row;
+    text-align: right;
+}
+
+h1 {
+    margin-bottom: -5px;
+    font-size: 2.5em;
+    margin-top: 0;
+    padding-top: 8px;
+}
+
+h2 {
+    margin: 45px auto 15px auto;
+    font-size: 1.8em;
+}
+
+.links {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: center;
+    margin: 4px;
+}
+
+a {
+    padding: 0.5rem;
+    text-shadow: none;
+    text-decoration: none;
+    color: var(--brown);
+}
+
+a:hover {
+    padding: 0.5rem;
+    color: white;
+    cursor: url('res/hcursor.png'), auto;
+}
+
+a:active {
+    padding: 0.5rem;
+    color: var(--red)
+}
+
+.logo {
+    height: 80px;
+    width: 93px;
+    border-radius: 50%;
+    text-align: right;
+    margin: 4px;
+    size: 30%;
+    mix-blend-mode: multiply;
+    filter: contrast(1);
+    padding: 0.1em;
+}
+
+p {
+    display: block;
+    width: 100%;
+    margin: 5px auto;
+
+}
+
+footer {
+    background-color: var(--lightpink);
+}
+
+footer p a {
+    color: white;
+    text-shadow: -0.05rem 0 var(--brown), 0 0.05rem var(--brown), 0.05rem 0 var(--brown), 0 -0.05rem var(--brown);
+}
+
+footer p a:hover {
+    color: black;
+    text-decoration: underline;
+    text-shadow: none;
+}
+
+footer p a:active {
+    color: var(--red);
+    text-shadow: none;
+}
+
+
+a {
+    transition: transform 0.2s;
+}
+
+a:hover {
+    transform: scale(1.2);
+}
+
+.main {
+    min-width: 300px;
+    max-width: 50vw;
+    min-height: 250px;
+    max-height: 28vh;
+    border: 5px solid var(--brown);
+    margin: 8px auto;
+    background-color: #f66cc1d5;
+    display: flex;
+    flex-direction: row;
+    border-radius: 0 80px 0 80px;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.quote {
+    padding: 18px;
+    font-size: 3.2rem;
+}
+
+.shower {
+    min-height: 355px;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+    background-image: url('res/mback.jpg');
+}
+
+
+footer,
+.products_show,
+.detailList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.detailList {
+    flex-wrap: nowrap;
+    transition: flex-wrap 1.5s, margin 0.5s, background-color 0.5s, border-radius 0.5s, border 0.5s;
+    margin: 5px;
+}
+
+.products_show figcaption {
+    color: black;
+    text-shadow: none;
+}
+
+.OuterCircle {
+    width: 22vw;
+    height: auto;
+    min-width: 70px;
+    max-width: 173px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--red);
+    transition: width 1s, border-radius 1s;
+}
+
+.OuterCircle>* {
+    aspect-ratio: 1;
+    width: 20vw;
+    min-width: 65px;
+    max-width: 157px;
+    height: auto;
+    border-radius: 50%;
+    transition: border-radius 1s;
+}
+
+figure,
+.OuterCircle, form {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.detailList>label>*:not(figure),
+.detailList>label>figure>figcaption[id="price"],
+.detailList:has(input:checked)>label>figure>figcaption[id="name"] {
+    display: none;
+}
+
+.detailList:has(input:checked) .animBorder,
+.detailList:has(input:checked) {
+    border-radius: 0.5rem;
+}
+
+.detailList:has(input:checked)>label>*,
+.detailList:has(input:checked)>label>figure>figcaption[id="price"] {
+    display: block;
+}
+
+.detailList:has(input:checked), form {
+    width: 90vw;
+    margin: 10px auto;
+    background-color: var(--darkpink);
+}
+
+.details {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: center;
+    margin: 4px;
+}
+
+.details>p {
+    font-size: 1.5em;
+    color: var(--lightpink);
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+label, form .btn {
+    cursor: url('res/hcursor.png'), auto;
+}
+
+form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 90%;
+    flex-wrap: wrap;
+}
+
+form{
+    border-radius: 0.5rem;
+    padding: 1em;
+    max-width: 670px;
+}
+
+form .input-box input,
+form .btn,
+form textarea {
+    width: 90%;
+    background: var(--lightpink);
+    border-radius: 0.8rem;
+    margin: 0.7rem auto;
+    caret-color: var(--pink);
+    padding: 0.8em;
+}
+
+form .input-box input , form .btn{
+    width: 49%;
+    height: 2.5em;
+}
+
+form textarea {
+    resize: none;
+}
